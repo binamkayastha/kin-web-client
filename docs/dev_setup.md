@@ -82,7 +82,7 @@ $ docker run -d -p 6390:6379 redis
 
 This uses `dev.kin.today` as a domain name.
 ~~~~
-$ mkdir -p certs
+$ mkdir certs
 $ cd certs
 $ openssl req -nodes -newkey rsa:2048 -keyout localhost-key.pem -new -x509 -out localhost-cert.pem -subj /CN=dev.kin.today -reqexts SAN -extensions SAN -config <(cat /System/Library/OpenSSL/openssl.cnf <(printf '[SAN]\nsubjectAltName=DNS:dev.kin.today')) -sha256 -days 365
 $ echo "0.0.0.0 dev.kin.today" | sudo tee -a /etc/hosts
